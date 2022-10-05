@@ -9,5 +9,5 @@ export const isCategoriesValid = (value) => {
 }
 
 export const isExpirationDateValid = (value) => {
-	return value && timestampToDays(Date.parse(value) - Date.now()) >= 30;
+	return value === "" || timestampToDays(Date.parse(value) - Date.now()) >= 30;
 }
