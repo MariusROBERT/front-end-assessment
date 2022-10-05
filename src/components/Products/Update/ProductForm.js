@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Button, Form, FormFeedback, FormGroup, Input, Label} from 'reactstrap';
 import {getMultiSelected, repeat} from '../../../utils';
 import {isCategoriesValid, isNameValid} from './validators';
+import {isFeatured} from "../../../reducers/products";
 
 const ProductForm = (props) => {
     const {product = {}} = props;
@@ -62,7 +63,10 @@ const ProductForm = (props) => {
                     name="rating"
                     id="rating"
                     value={rating}
-                    onChange={({target}) => setRating(target.value)}
+                    onChange={({target}) => {
+                        setRating(target.value);
+                        setFeatured(isFeatured({rating: target.value}));
+                    }}
                 >
                     {repeat(11).map((v) => (
                         <option key={v} value={v}>{v}</option>
