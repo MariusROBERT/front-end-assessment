@@ -123,7 +123,9 @@ const ProductForm = (props) => {
                     Featured
                 </Label>
             </FormGroup>
-            <Button>Submit</Button>
+            <Button
+                disabled={!isNameValid(name) || !isCategoriesValid(categories) || !isExpirationDateValid(expirationDate)}
+            >Submit</Button>
         </Form>
     );
 }
