@@ -7,3 +7,7 @@ export const isNameValid = (value) => {
 export const isCategoriesValid = (value) => {
 	return value.length > 0 && value.length <= 5;
 }
+
+export const isExpirationDateValid = (value) => {
+	return value && timestampToDays(Date.parse(value) - Date.now()) >= 30;
+}
