@@ -11,7 +11,7 @@ import App from './App';
 import {fetchCategories} from './actions/categories';
 import {fetchProducts} from './actions/products';
 import {createHashHistory} from 'history';
-import {Router} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import {categoryApi} from './gateways/CategoryApi';
 
 const history = createHashHistory();
